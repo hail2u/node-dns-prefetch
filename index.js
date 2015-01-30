@@ -37,7 +37,10 @@ page.onResourceRequested = function(request) {
 
   domains.push(domain);
 };
+page.settings.localToRemoteUrlAccessEnabled = true;
 page.settings.userAgent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.93 Safari/537.36';
+page.settings.webSecurityEnabled = false;
+page.settings.XSSAuditingEnabled = true;
 
 page.open(url, function () {
   _.uniq(domains).sort().forEach(function (domain) {
