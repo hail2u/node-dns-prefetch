@@ -1,7 +1,7 @@
 dns-prefetch
 ============
 
-Generate \<link rel="ds-prefetch">s from URL.
+Generate \<link rel="dns-prefetch">s from URL.
 
 
 INSTALL
