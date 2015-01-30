@@ -23,6 +23,7 @@ if (args._.length === 0) {
   console.log('');
   console.log('  -t <NUM>, --try=<NUM>  Try <NUM> times (default: 1).');
   console.log('  -x, --xhtml            Output XHTML syntax format.');
+
   phantom.exit(1);
 }
 
@@ -69,6 +70,7 @@ var render = function () {
       _.uniq(domains).sort().forEach(function (domain) {
         console.log('<link href="//' + domain + '" rel="dns-prefetch"' + xhtml + '>');
       });
+
       phantom.exit();
     }
 
