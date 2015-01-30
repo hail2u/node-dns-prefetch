@@ -1,0 +1,29 @@
+{
+  "name": "dns-prefetch",
+  "description": "Generate <link rel=\"dns-prefetch\">s from URL.",
+  "version": "0.1.0",
+  "author": "Kyo Nagashima <hail2u@gmail.com> (https://kyonagashima.com/)",
+  "bin": {
+    "dns-prefetch": "dns-prefetch.js"
+  },
+  "bugs": {
+    "url": "https://github.com/hail2u/node-dns-prefetch/issues"
+  },
+  "dependencies": {
+    "lodash": "^3.0.1",
+    "phantomjs": "^1.9.15"
+  },
+  "devDependencies": {},
+  "homepage": "https://github.com/hail2u/node-dns-prefetch",
+  "keywords": [
+    "html",
+    "dns",
+    "dns-prefetch"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hail2u/node-dns-prefetch.git"
+  }
+}
