@@ -1,8 +1,17 @@
 'use strict';
 
 var _ = require('lodash');
+var minimist = require('minimist');
 
-var args = require('system').args;
+var args = minimist(require('system').args.slice(3), {
+  'alias': {
+    'x': 'xhtml'
+  },
+  'boolean': ['xhtml'],
+  'default': {
+    'xhtml': false
+  }
+});
 var domains = [];
 var gatherDomain = function (r) {
   a = document.createElement('a');
@@ -18,18 +27,14 @@ var gatherDomain = function (r) {
 var page = require('webpage').create();
 var xhtml = '';
 
-if (args.length < 4) {
+if (args._.length === 0) {
   console.log('$ dns-prefetch <URL> [--xhtml]');
   phantom.exit(1);
 }
 
-var url = args[3];
+var url = args._[0];
 
-if (args.length > 4) {
-  if (url === '--xhtml') {
-    url = args[4];
-  }
-
+if (args.xhtml) {
   xhtml = ' /';
 }
 
