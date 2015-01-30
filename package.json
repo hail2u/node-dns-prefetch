@@ -20,7 +20,10 @@
     "dns",
     "dns-prefetch"
   ],
-  "license": "MIT",
+  "license": {
+    "type": "MIT",
+    "url": "http://hail2u.mit-license.org/2015"
+  },
   "main": "index.js",
   "private": true,
   "repository": {
