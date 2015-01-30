@@ -7,15 +7,25 @@ var pkg = require('./package.json');
 var args = minimist(require('system').args.slice(3), {
   'alias': {
     't': 'try',
+    'v': 'version',
     'x': 'xhtml'
   },
-  'boolean': ['xhtml'],
+  'boolean': [
+    'version',
+    'xhtml'
+  ],
   'default': {
     'try': 1,
     'xhtml': false
   },
   'string': ['try']
 });
+
+if (args.version) {
+  console.log(Object.keys(pkg.bin)[0] + ' v' + pkg.version);
+
+  phantom.exit();
+}
 
 if (args._.length === 0) {
   console.log('Usage: ' + Object.keys(pkg.bin)[0] + ' <URL> [--xhtml] [--try=<NUM>]');
