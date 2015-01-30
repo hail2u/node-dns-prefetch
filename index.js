@@ -4,6 +4,17 @@ var _ = require('lodash');
 
 var args = require('system').args;
 var domains = [];
+var gatherDomain = function (r) {
+  a = document.createElement('a');
+  a.href= r.url;
+  var domain = a.hostname;
+
+  if (!domain || domain === urlDomain) {
+    return;
+  }
+
+  domains.push(domain);
+};
 var page = require('webpage').create();
 var xhtml = '';
 
@@ -26,17 +37,10 @@ var a = document.createElement('a');
 a.href= url;
 var urlDomain = a.hostname;
 
-page.onResourceRequested = function(request) {
-  a = document.createElement('a');
-  a.href= request.url;
-  var domain = a.hostname;
-
-  if (!domain || domain === urlDomain) {
-    return;
-  }
-
-  domains.push(domain);
-};
+page.onResourceError = gatherDomain;
+page.onResourceRequested = gatherDomain;
+page.onResourceReceived = gatherDomain;
+page.onResourceTimeout = gatherDomain;
 page.settings.localToRemoteUrlAccessEnabled = true;
 page.settings.userAgent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.93 Safari/537.36';
 page.settings.webSecurityEnabled = false;
