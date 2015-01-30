@@ -56,6 +56,7 @@ var render = function () {
   page.settings.XSSAuditingEnabled = true;
 
   page.open(url, function () {
+    page.close();
     i--;
 
     if (i === 0) {
@@ -68,7 +69,6 @@ var render = function () {
       _.uniq(domains).sort().forEach(function (domain) {
         console.log('<link href="//' + domain + '" rel="dns-prefetch"' + xhtml + '>');
       });
-
       phantom.exit();
     }
 
