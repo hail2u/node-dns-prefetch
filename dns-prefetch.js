@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 
-'use strict';
+"use strict";
 
-var path = require('path');
-var phantomjs = require('phantomjs');
-var spawn = require('child_process').spawnSync;
+var path = require("path");
+var phantomjs = require("phantomjs");
+var spawn = require("child_process").spawnSync;
 
 var args = process.argv;
-args.unshift(path.join(__dirname, 'index.js'));
+args.unshift(path.join(__dirname, "index.js"));
 
-var p = spawn(phantomjs.path, args, {
-  stdio: 'inherit'
+spawn(phantomjs.path, args, {
+  stdio: "inherit"
 });
