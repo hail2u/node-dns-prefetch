@@ -1,5 +1,5 @@
 {
-  "name": "dns-prefetch",
+  "name": "@hail2u/dns-prefetch",
   "description": "Generate <link rel=\"dns-prefetch\">s from URL.",
   "version": "0.2.0",
   "author": "Kyo Nagashima <hail2u@gmail.com> (https://kyonagashima.com/)",
@@ -23,7 +23,6 @@
   ],
   "license": "MIT",
   "main": "index.js",
-  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/hail2u/node-dns-prefetch.git"
