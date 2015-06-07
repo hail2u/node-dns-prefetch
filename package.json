@@ -4,7 +4,7 @@
   "version": "0.2.0",
   "author": "Kyo Nagashima <hail2u@gmail.com> (https://kyonagashima.com/)",
   "bin": {
-    "dns-prefetch": "dns-prefetch.js"
+    "dns-prefetch": "index.js"
   },
   "bugs": {
     "url": "https://github.com/hail2u/node-dns-prefetch/issues"
